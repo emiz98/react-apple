@@ -27,8 +27,8 @@ const Hero = ({ name, tag, price, image, isImage, isBack }) => {
           <img
             src={image}
             alt="image"
-            className={`h-3/5 object-cover rounded-2xl shadow-sm ${
-              isBack && "relative z-10"
+            className={`h-full md:h-3/5 object-cover rounded-2xl shadow-sm ${
+              isBack && "relative z-10 !h-3/5"
             }`}
           />
         ) : (
@@ -80,7 +80,7 @@ const Hero = ({ name, tag, price, image, isImage, isBack }) => {
           <div
             onClick={() => handleVideo()}
             className="p-2 group hover:border-white cursor-pointer border-gray-300 border-4 w-max 
-          rounded-full text-gray-300 absolute top-5 md:bottom-5 right-5"
+          rounded-full text-gray-300 absolute top-5 md:top-auto md:bottom-5 right-5"
           >
             {isPlaying ? (
               <PauseIcon className="h-6 object-contain group-hover:text-white" />
