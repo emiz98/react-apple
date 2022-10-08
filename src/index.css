@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .icon {
+    @apply h-4 w-4 text-gray-300 hover:text-white
+     cursor-pointer;
+  }
+  header > span {
+    @apply hover:text-white cursor-pointer hidden md:flex;
+  }
+}
