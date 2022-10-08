@@ -16,7 +16,7 @@ import dataMock from "../mockAPI/data.mock";
 
 const Carousal = () => {
   return (
-    <div className="flex flex-col justify-center items-center mt-10 md:mx-60">
+    <div className="flex flex-col justify-center items-center my-10 md:mx-60">
       <h1 className="text-3xl px-5 md:text-4xl font-bold text-center w-full max-w-md mb-10">
         A magical connection to your devices.
       </h1>
@@ -40,7 +40,7 @@ const Carousal = () => {
       >
         {dataMock.carousalProducts.map(({ name, image }) => (
           <SwiperSlide key={name}>
-            <div className="bg-white shadow-md rounded-2xl w-80 mb-10">
+            <div className="bg-white shadow-md rounded-2xl w-80 mb-2">
               <img
                 src={image}
                 alt={name}

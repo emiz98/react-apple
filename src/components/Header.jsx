@@ -6,7 +6,7 @@ import {
 const Header = () => {
   return (
     <header className="bg-[#313132] px-5 py-3 w-full flex justify-center">
-      <div className="flex justify-between items-center text-gray-300 text-xs max-w-6xl space-x-10">
+      <div className="flex justify-between w-full md:w-auto items-center text-gray-300 text-[10px] max-w-6xl space-x-10">
         <img src="/assets/apple.png" alt="logo" className="h-5 w-5 invert" />
         <span>Store</span>
         <span>Mac</span>

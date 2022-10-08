@@ -1,4 +1,5 @@
 import Carousal from "./components/Carousal";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Store from "./components/Store";
@@ -26,7 +27,7 @@ const App = () => {
       </div>
       <Carousal />
       <Store />
-      <div className="h-20 bg-black w-full mt-10"></div>
+      <Footer />
     </div>
   );
 };

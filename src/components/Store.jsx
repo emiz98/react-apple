@@ -10,8 +10,8 @@ const Store = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-y-20">
         {dataMock.storeProducts.map(
-          ({ name, tag, price, image, chargeTime }) => (
-            <div className="flex flex-col items-center">
+          ({ name, tag, price, image, chargeTime }, i) => (
+            <div className="flex flex-col items-center" key={i}>
               <img
                 src={image}
                 alt={name}
@@ -27,11 +27,8 @@ const Store = () => {
                 >
                   Buy
                 </button>
-                <div
-                  className="flex items-center gap-x-1
-                  text-blue-600"
-                >
-                  <span className="hover:underline cursor-pointer mt-2">
+                <div className="flex items-center gap-x-1 text-blue-600 mt-2">
+                  <span className="hover:underline cursor-pointer mb-1">
                     Learn more
                   </span>
                   <ChevronRightIcon className="h-4 object-contain" />

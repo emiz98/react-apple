@@ -4,10 +4,9 @@
 
 @layer components {
   .icon {
-    @apply h-4 w-4 text-gray-300 hover:text-white
-     cursor-pointer;
+    @apply h-4 w-4 text-gray-300 hover:text-white cursor-pointer;
   }
-  header > span {
+  header > div > span {
     @apply hover:text-white cursor-pointer hidden md:flex;
   }
 }
