@@ -1,8 +1,9 @@
 import { ChevronRightIcon } from "@heroicons/react/24//outline";
 import { PlayIcon, PauseIcon } from "@heroicons/react/24/solid";
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 
-const Hero = ({ name, tag, price, image, isImage, isBack }) => {
+const Hero = ({ name, tag, price, image, isImage, animationIndex, isBack }) => {
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef(null);
 
@@ -17,7 +18,21 @@ const Hero = ({ name, tag, price, image, isImage, isBack }) => {
   };
 
   return (
-    <div className="p-5">
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: 50,
+      }}
+      animate={{
+        x: 0,
+        opacity: 1,
+        transition: {
+          delay: animationIndex * 0.3,
+          duration: 0.3,
+        },
+      }}
+      className="p-5"
+    >
       <div
         className={`relative !mx-auto !my-4 ${
           isImage ? "text-black" : "text-white"
@@ -42,19 +57,88 @@ const Hero = ({ name, tag, price, image, isImage, isBack }) => {
           />
         )}
 
-        <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center">
-          <h4 className="font-bold text-[#00FF41] text-lg">{tag}</h4>
-          <h1
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+            transition: {
+              duration: 0.4,
+            },
+          }}
+          className="absolute top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center"
+        >
+          <motion.h4
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              y: 0,
+              opacity: 1,
+              transition: {
+                delay: 1,
+                duration: 0.3,
+              },
+            }}
+            className="font-bold text-[#00FF41] text-lg"
+          >
+            {tag}
+          </motion.h4>
+          <motion.h1
+            initial={{
+              opacity: 0,
+              x: 50,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                delay: 0.3,
+                duration: 0.3,
+              },
+            }}
             className={` ${
               isImage ? "text-6xl md:text-8xl" : "text-7xl"
             } font-bold text-center ${isBack && "mt-20 md:mt-0"}`}
           >
             {name}
-          </h1>
-          <span className="text-lg mt-4">{price}</span>
-        </div>
+          </motion.h1>
+          <motion.span
+            initial={{
+              opacity: 0,
+              y: -20,
+            }}
+            animate={{
+              y: 0,
+              opacity: 1,
+              transition: {
+                delay: 1,
+                duration: 0.3,
+              },
+            }}
+            className="text-lg mt-4"
+          >
+            {price}
+          </motion.span>
+        </motion.div>
 
-        <div className="absolute top-0 bottom-6 left-0 right-0 flex items-end justify-center">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 50,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              delay: 1.5,
+              duration: 0.3,
+            },
+          }}
+          className="absolute top-0 bottom-6 left-0 right-0 flex items-end justify-center"
+        >
           <div className="flex items-center space-x-5">
             <button
               className={`px-8 py-3 rounded-full ${
@@ -74,10 +158,22 @@ const Hero = ({ name, tag, price, image, isImage, isBack }) => {
               <ChevronRightIcon className="h-4 object-contain" />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {!isImage && (
-          <div
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 50,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                delay: 1.5,
+                duration: 0.3,
+              },
+            }}
             onClick={() => handleVideo()}
             className="p-2 group hover:border-white cursor-pointer border-gray-300 border-4 w-max 
           rounded-full text-gray-300 absolute top-5 md:top-auto md:bottom-5 right-5"
@@ -87,10 +183,10 @@ const Hero = ({ name, tag, price, image, isImage, isBack }) => {
             ) : (
               <PlayIcon className="h-6 object-contain group-hover:text-white" />
             )}
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
