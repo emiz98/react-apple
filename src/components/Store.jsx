@@ -3,8 +3,8 @@ import dataMock from "../mockAPI/data.mock";
 
 const Store = () => {
   return (
-    <div className="flex flex-col justify-center items-center mt-20 md:mx-60">
-      <h1 className="text-3xl px-5 md:text-4xl font-bold text-center w-full max-w-md mb-10">
+    <div className="flex flex-col justify-center items-center mt-20 lg:mx-60">
+      <h1 className="text-3xl px-5 md:text-4xl font-bold text-center w-full mb-10">
         Which AirPods are right for you?
       </h1>
 

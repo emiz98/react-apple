@@ -2,7 +2,7 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const Footer = () => {
   return (
-    <div className="bg-white py-3 border-t-[2px] border-gray-100 mt-10 px-5 md:px-60">
+    <div className="bg-white py-3 border-t-[2px] border-gray-100 mt-10 px-5 lg:px-60">
       <div className="flex items-center space-x-0 text-xs mb-5">
         <img src="/assets/apple.png" alt="logo" className="h-4 w-4" />
         <ChevronRightIcon className="h-3 object-contain" />

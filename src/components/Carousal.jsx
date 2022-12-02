@@ -10,21 +10,18 @@ import "swiper/css/pagination";
 import "./styles.css";
 
 // import required modules
-import { FreeMode, Pagination } from "swiper";
 import { PlusCircleIcon } from "@heroicons/react/24/solid";
 import dataMock from "../mockAPI/data.mock";
 
 const Carousal = () => {
   return (
-    <div className="flex flex-col justify-center items-center my-10 md:mx-60">
+    <div className="flex flex-col justify-center items-center my-10 px-5 xl:mx-60">
       <h1 className="text-3xl px-5 md:text-4xl font-bold text-center w-full max-w-md mb-10">
         A magical connection to your devices.
       </h1>
       <Swiper
         slidesPerView={3}
         spaceBetween={20}
-        freeMode={true}
-        modules={[FreeMode]}
         className="mySwiper"
         breakpoints={{
           100: {
@@ -33,7 +30,7 @@ const Carousal = () => {
           768: {
             slidesPerView: 3,
           },
-          1024: {
+          1366: {
             slidesPerView: 4,
           },
         }}

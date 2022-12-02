@@ -36,7 +36,7 @@ const Hero = ({ name, tag, price, image, isImage, animationIndex, isBack }) => {
       <div
         className={`relative !mx-auto !my-4 ${
           isImage ? "text-black" : "text-white"
-        } md:m-10 rounded-2xl select-none bg-white shadow-sm hover:shadow-lg h-[60vh] md:h-auto md:w-3/5`}
+        } md:m-10 rounded-2xl select-none bg-white shadow-sm hover:shadow-lg h-[60vh] md:h-auto lg:w-3/5`}
       >
         {isImage ? (
           <img
